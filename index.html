@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+
+
+    <title>Registration Form</title>
+</head>
+
+<body>
+    <h1>Registeration <br>Form</h1>
+    <div class="main">
+        <div class="box">
+            <label>First Name</label>
+            <input type="text" name="name" id="name" placeholder="Enter name">
+        </div>
+        <br>
+        <div class="box">
+            <label>Your Email</label>
+            <input type="email" name="email" id="email" placeholder="Enter email">
+        </div>
+        <br>
+        <button class="btn btn-danger" onclick="userLogin()">Login</button>
+    </div>
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgb(255, 255, 255);
+            text-align: center;
+            justify-content: center;
+        }
+
+        label {
+            font-family: sans-serif;
+
+        }
+
+        .main {
+            height: 300px;
+            width: 300px;
+            border: 2px solid rgb(46, 9, 9);
+            border-radius: 10px;
+            background: rgb(199, 231, 229);
+            margin-left: 40%;
+            padding-top: 2px;
+        }
+
+        .box {
+            padding: 25px;
+        }
+
+        input {
+            width: 190px;
+            border: 2px solid rgb(70, 14, 14);
+            border-radius: 5px;
+        }
+
+        h1 {
+            margin-top: 7%;
+            font-family: sans-serif;
+            color: brown;
+        }
+    </style>
+
+    <script>
+
+        var users = [{
+            name: 'Lokesh',
+            email: 'lokesh@gmail.com'
+        },
+        {
+            name: 'Ashish',
+            email: 'ashish@gmail.com'
+        }
+        ];
+
+        function userLogin() {
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var isExist;
+
+            if (name === users[0].name && email === users[0].email) {
+                isExist = users[0];
+            } else if (name === users[1].name && email === users[1].email) {
+                isExist = users[1];
+            } if (isExist) {
+                window.location.href = "newpage.html";
+
+            }
+            else {
+                alert('Please check name/email!\n\Select from Lokesh and Ashish');
+            }
+
+        };
+
+
+
+    </script>
+</body>
+
+</html>
